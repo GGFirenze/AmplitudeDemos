@@ -1,6 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script type="text/javascript" src="https://cdn.amplitude.com/libs/amplitude-8.21.4-min.gz.js"></script>
+<script type="text/javascript">
+!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-BHj/6N+ZSiRDYRUHPEqr/nwkUsSk3s9r1ryQeFBc4x2OiVz4peW3jSccKZsoU8Ry",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-beta.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+
+amplitude.init('c1c4a47c30c4aeb6ce93b6bfbf9472dc', {
+    defaultTracking: {
+          attribution: true,
+          pageViews: true,
+          sessions: true,
+          formInteractions: true,
+          fileDownloads: true,
+          buttonClicked: true,
+          elementClicked: true,
+    },
+    })
+</script>
+<!--
+<script type="text/javascript">
+  function create_UUID(){
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+}
+
+
+function setCookie(name, value, days) {
+    var expires = '';
+    if (days) {
+  var date = new Date();
+  date.setTime(date.getTime() + days*24*60*60*100); 
+  expires = '; expires=' + date.toUTCString();
+    }
+    document.cookie = name + '=' + (value || '') + expires + '; path=/';
+}
+
+function getCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i=0; i < ca.length; i++) {
+  var c = ca[i];
+  while (c.charAt(0) == ' ')  {
+      c = c.substring(1,c.length);
+  }
+  if (c.indexOf(nameEQ) == 0) {
+      return c.substring(nameEQ.length,c.length);
+  }
+    }
+    return null;
+}
+
+function hrefClicked(e) {
+  var hrefSubject = document.getElementById('href-subject').value;
+  var hrefId = create_UUID();
+  var hrefOpened = 'True';
+
+  amplitude.track('hrefClicked', {'name': hrefSubject}); 
+
+    if (localStorage.getItem('href-subject') == null) {
+    var hrefs = [];
+    hrefs.push(hrefSubject);
+    localStorage.setItem('href-subject', JSON.stringify(hrefs));
+  } else {
+    var hrefs = JSON.parse(localStorage.getItem('href-subject'));
+    hrefs.push(hrefs);
+    localStorage.setItem('href-subject', JSON.stringify(hrefs));
+  }
+
+  document.getElementById('href-subject').reset();
+
+  fetchMemos();
+
+  e.preventDefault();
+}
+
+</script> -->
+
   <style>
     body {
   background: white;
@@ -36,6 +116,7 @@ a, a:visited {
 
 img {
   border: 1px solid black;
+  position: center;
 }
 
 nav {
@@ -52,6 +133,9 @@ nav {
 </head>
   
 <body>
+  <script>
+    amplitude.getInstance().setUserId('giuliano.giannini@amplitude.com');
+  </script>
   <nav>
     <a href="#intro">Intro |</a>
     <a href="#videoclips">Must-watch Clips |</a>
@@ -81,13 +165,48 @@ nav {
   <h2  id="blurb">Muchachito Bombo Infierno's Videoclips With Brief Description</h2><h5>Click on the songs' title to watch the corresponding video</h5>
 
   <h3 id="cabeza"><a href="https://youtu.be/RVYDO6bZAvw" target="_blank">En mi Cabeza</a>.</h3>
+
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('cabeza');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_title: "En Mi Cabeza",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked');
+    });
+  </script>
+
   <p>This song is actually a version of Kevin Johanssen's piece. In this remake, Jairo proposes an upbeat Rumba-inspired version</p>
   <br>
   <h3 id="tiempos"><a href="https://youtu.be/r5XlPuG8cyE" target="_blank">Tiempos Modernos</a>.</h3>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('tiempos');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_title: "Tiempos Modernos",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked');
+    });
+  </script>
+
   <p>This is one my all-time favourite songs ever written by Jairo. The song is about the absurdity of our current society. In this hit, Muchachito starts off saying how those who misbehave always receive the best treatment as opposed to honest individuals who often are given a hard time if they make the minor of mistakes. It is also a song that describes the cinicism of our times. Especially when it says "<em>no te encariñes, vuélvete práctico</em>", meaning don't soften up, be pragmatic.</p>
   <br>
   <h3 id="ojala"><a href="https://youtu.be/Xh3dVN9J_yI" target="_blank">Siempre Que Tú Quieras</a>.</h3>
-  <p>Razmatazz, Barcelona, 2011. This song could not miss from our recommended list. This is arguably an all-time favourite masterpiece by the <em>colomense</em> artist. The reason why I recommend this performance is rooted in the gradual development of the atmosphere around this performance. Jairo starts soft with a <em>soave</em> introduction to then break the theatre's walls under the rythm of his guitar. Siempre Que Tú Quieras is arguably the most replicated of his songs. One of the most known versions is the one from the group <em><a href="https://youtu.be/McGFAl9YVlg" target="_blank">No Me Pises Que Llevo Chanclas</a></em>. Jairo himself in a interview at Andreu Buenafuente's TV show <em>Late Motiv</em> stated that he came across some music bands in South America who claimed this song as their making. He also joked about him making fun of his same song during concerts. "<em>Sometimes I change the lyrics and say Ojalá no te hubiera conocido en Murcia instead</em>.</p>
+  <p>Razmatazz, Barcelona, 2011. This song could not miss from our recommended list. This is arguably an all-time favourite masterpiece by the <em>colomense</em> artist. The reason why I recommend this performance is rooted in the gradual development of the atmosphere around this performance. Jairo starts soft with a <em>soave</em> introduction to then break the theatre's walls under the rythm of his guitar. Siempre Que Tú Quieras is arguably the most replicated of his songs. One of the most known versions is the one from the group <em><a href="https://youtu.be/McGFAl9YVlg" target="_blank">No Me Pises Que Llevo Chanclas</a></em>. Jairo himself in a interview at Andreu Buenafuente's TV show <em>Late Motiv</em> stated that he came across some music bands in South America who claimed this song as their making. He also joked about him making fun of his same song during concerts. "<em>Sometimes I change the lyrics and say Ojalá no te hubiera conocido en Murcia instead"</em>.</p>
   <br>
   <h3 id="camino"><a href="https://youtu.be/HNdw1-1xNBk" target="_blank">Vino y se Fue - Vilafranca Concert</a>.</h3>
   <p>In this videoclip Jairo is in his <em>One Man Band</em> version that made his famous. As a matter of fact, Muchachito's formation as an artist happened for the most part as a street performer. This gave him the acute capability of merging himself with his audience. As he stated in previous interviews, performing in the street gave him the chance to see people reacting to his music right away. He often declared of having played in the streets of Paris because artists are better treated there in terms of permits to play and such. While playing there, he learned a big deal from other performers (from Jamaica, among others) who gave him some precious tips on how to make the public dance. In this occasion, he is with his lifelong friends and co-performer Santos de Veracruz, the painter who has been collaborating with Jairo since high school. We recommend that you watch the entire series of these videos shot in Vilafranca. There are 6 in total. Here they were in the casino of Vilafranca, in 2011</p>
@@ -106,7 +225,6 @@ Some of his most loved songs are inspired by less known authors or other artists
 <br>
 <br>
 Another reinterpretation is inspired by one of Josele Sanguesa's creations <em>Soy Luz</em>. Soy Luz is featured in his disc <em>Visto lo Visto</em>. Among some of Sanguesa's most appreciated works, I would love to signal <em>Playa</em>. Guess what? Our beloved Jairo knows when a song is great. He just knows. Which is how Playa entered his repertory as well. Both versions are absolutely beautiful. Take a look at the original version <a href="https://youtu.be/e0a_0sHpsFI" target="_blank">here</a>. Jairo's version can be found <a href="https://youtu.be/4bMrTSGfwU4" target="_blank">here instead</a> (min 2.22).
-  <script src="script.js"></script>
   <br>
   <br>
   One more song that probably not so many people konw being a version is <em>La Quiero a Morir</em>. Jairo's French followers can surely make the instant connection with Francis Cabrel's success<em>Je l'aime à mourir</em>. As done before, here are two links to help you appreciate both the <a href="https://www.youtube.com/watch?v=hrahPhIu3Oc" target="_blank">"original song</a> and <a href="https://www.youtube.com/watch?v=eEeKx1T8ndQ" target="_blank">Jairo's reinterpretation</a>.
