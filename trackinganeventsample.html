@@ -1,16 +1,16 @@
  <script type="text/javascript">
     // Get a reference to the button element
- var linkElement = document.getElementById('cabeza');
+ var headerClicked = document.getElementById('cabezali');
 
    // Add a click event listener to the link
-  linkElement.addEventListener('click', function(event) {
+  headerClicked.addEventListener('click', function(event) {
     // Track the link click event with Amplitude and pass additional properties
-    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+    amplitude.getInstance().logEvent('header_clicked', eventProperties, {debug: true})
+       var eventProperties = {
+      href_name: "En mi cabeza",
+      href_is_video: false
+    };
 
-    var eventProperties = {
-      href_title: "En Mi Cabeza",
-      href_is_video: true
-    }
-          amplitude.track('href_clicked');
+          amplitude.track('header_clicked', eventProperties);
     });
   </script>
