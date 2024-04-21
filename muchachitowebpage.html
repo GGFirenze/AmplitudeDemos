@@ -69,15 +69,87 @@ nav {
 </head>
   
 <body>
-  <script>
-    amplitude.getInstance().setUserId('giuliano.giannini@amplitude.com');
-  </script>
   <nav>
-    <a href="#intro">Intro |</a>
-    <a href="#videoclips">Must-watch Clips |</a>
-    <a href="#blurb">Clips Description |</a>
-    <a href="#curiosities">Curiosities |</a>
-    <a href="#webpages">Where to Find Jairo</a>
+    <a id="intronav" href="#intro">Intro |</a>
+     <script type="text/javascript">
+    // Get a reference to the button element
+ var navInteracted = document.getElementById('intronav');
+
+   // Add a click event listener to the link
+  navInteracted.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('nav_clicked', {debug: true})
+       var eventProperties = {
+      nav_item_name: "Intro"
+    };
+
+          amplitude.track('nav_clicked', eventProperties);
+    });
+  </script>
+    <a id="mustwatchnav" href="#videoclips">Must-watch Clips |</a>
+         <script type="text/javascript">
+    // Get a reference to the button element
+ var navInteracted = document.getElementById('mustwatchnav');
+
+   // Add a click event listener to the link
+  navInteracted.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('nav_clicked', {debug: true})
+       var eventProperties = {
+      nav_item_name: "Must-watch Clips"
+    };
+
+          amplitude.track('nav_clicked', eventProperties);
+    });
+  </script>
+    <a id="blurbnav" href="#blurb">Clips Description |</a>
+             <script type="text/javascript">
+    // Get a reference to the button element
+ var navInteracted = document.getElementById('blurbnav');
+
+   // Add a click event listener to the link
+  navInteracted.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('nav_clicked', {debug: true})
+       var eventProperties = {
+      nav_item_name: "Clips Description"
+    };
+
+          amplitude.track('nav_clicked', eventProperties);
+    });
+  </script>
+    <a id="trivianav" href="#curiosities">Curiosities |</a>
+             <script type="text/javascript">
+    // Get a reference to the button element
+ var navInteracted = document.getElementById('trivianav');
+
+   // Add a click event listener to the link
+  navInteracted.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('nav_clicked', {debug: true})
+       var eventProperties = {
+      nav_item_name: "Curiosities"
+    };
+
+          amplitude.track('nav_clicked', eventProperties);
+    });
+  </script>
+    <a id="pagesnav" href="#webpages">Where to Find Jairo</a>
+               <script type="text/javascript">
+    // Get a reference to the button element
+ var navInteracted = document.getElementById('pagesnav');
+
+   // Add a click event listener to the link
+  navInteracted.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('nav_clicked', {debug: true})
+       var eventProperties = {
+      nav_item_name: "Pages"
+    };
+
+          amplitude.track('nav_clicked', eventProperties);
+    });
+  </script>
     </nav>
   <h1 class='titulo'>Jairo Perera: un rumbero <em>New Orleans style</em> de Santa Coloma de Gramenet (Bcn)</h1>
   <img src="http://docs.llull.cat/IMAGES_45/img0049-copia.jpg" alt="Muchachito and Santos de Veracruz">
@@ -87,21 +159,120 @@ nav {
   </div>
   <br>
   <h2>But what are some of the most appreciated videoclips available on YouTube?</h2>
-  <p>Hundreds of videos potraying the artist from Santa Coloma can be found on YouTube. But what are the most recommended ones from us with <em><strong>Todo Muchachito</strong></em> magazine? Here is a list of clips recommended by our Director <a href="https://www.instagram.com/julio_vegas/" target="_blank">Giuliano Giannini</a>.</p>
+  <p>Hundreds of videos potraying the artist from Santa Coloma can be found on YouTube. But what are the most recommended ones from us with <em><strong>Todo Muchachito</strong></em> magazine? Here is a list of clips recommended by our Director <a id="vegas" href="https://www.instagram.com/julio_vegas/" target="_blank">Giuliano Giannini</a>.
+<script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('vegas');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('social_opened', {debug: true})
+       var eventProperties = {
+      social_type: "Instagram",
+      social_page_name: "Julio Vegas",
+      social_owner: "Giuliano Giannini"
+    };
+
+          amplitude.track('social_opened', eventProperties);
+    });
+  </script>
+</p>
   <br>
   <h2 id="videoclips">Must-watch Clips</h2>
   <ol>
-    <li><a href="#cabeza">En mi Cabeza</a></li>
-    <li><a href="#tiempos">Tiempos Modernos</a></li>
-    <li><a href="#ojala">Siempre Que Tú Quieras</a></li>
-    <li><a href="#camino">Vino y se Fue & the Vilafranca Concert</a></li>
-    <li><a href="confinado">Muchachito Confinado - An Online Concert</a></li>
+    <li id="cabezali"><a href="#cabezah3">En mi Cabeza</a></li>
+ <script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('cabezali');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('header_clicked', {debug: true})
+       var eventProperties = {
+      href_name: "En mi cabeza",
+      href_is_video: false
+    };
+
+          amplitude.track('header_clicked', eventProperties);
+    });
+  </script>
+    <li id="tiemposli"><a href="#tiempos">Tiempos Modernos</a></li>
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('tiemposli');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('header_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Tiempos Modernos",
+      href_is_video: false
+    }
+          amplitude.track('header_clicked', eventProperties);
+    });
+  </script>
+    <li id="ojalali"><a href="#ojala">Siempre Que Tú Quieras</a></li>
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('ojalali');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('header_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Siempre que tú quieras",
+      href_is_video: false
+    }
+          amplitude.track('header_clicked', eventProperties);
+    });
+  </script>
+    <li id="favorita"><a href="#camino">Vino y se Fue & the Vilafranca Concert</a></li>
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('favorita');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('header_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Vino y se fue",
+      href_is_video: false
+    }
+          amplitude.track('header_clicked', eventProperties);
+    });
+  </script>
+
+    <li id="balcon"><a href="#confinado">Muchachito Confinado - An Online Concert</a></li>
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var headerClicked = document.getElementById('balcon');
+
+   // Add a click event listener to the link
+  headerClicked.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('header_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Muchachito Confinado",
+      href_is_video: false
+    }
+          amplitude.track('header_clicked', eventProperties);
+    });
+  </script>
+
     </ol>  
 <br>
   <h2  id="blurb">Muchachito Bombo Infierno's Videoclips With Brief Description</h2><h5>Click on the songs' title to watch the corresponding video</h5>
 
-  <h3 id="cabeza"><a href="https://youtu.be/RVYDO6bZAvw" target="_blank">En mi Cabeza</a>.</h3>
-
+  <h3 id="cabezah3"><a id="cabeza" href="https://youtu.be/RVYDO6bZAvw" target="_blank">En mi Cabeza</a>.</h3>
     <script type="text/javascript">
     // Get a reference to the button element
  var linkElement = document.getElementById('cabeza');
@@ -112,13 +283,13 @@ nav {
     amplitude.getInstance().logEvent('href_clicked', {debug: true})
 
     var eventProperties = {
-      href_title: "En Mi Cabeza",
-      href_is_video: true // Use boolean instead of string
+      href_name: "En Mi Cabeza",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
     }
-          amplitude.track('href_clicked');
+          amplitude.track('href_clicked', eventProperties);
     });
   </script>
-
   <p>This song is actually a version of Kevin Johanssen's piece. In this remake, Jairo proposes an upbeat Rumba-inspired version</p>
   <br>
   <h3 id="tiempos"><a href="https://youtu.be/r5XlPuG8cyE" target="_blank">Tiempos Modernos</a>.</h3>
@@ -132,38 +303,225 @@ nav {
     amplitude.getInstance().logEvent('href_clicked', {debug: true})
 
     var eventProperties = {
-      href_title: "Tiempos Modernos",
-      href_is_video: true // Use boolean instead of string
+      href_name: "Tiempos Modernos",
+            video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
     }
-          amplitude.track('href_clicked');
+          amplitude.track('href_clicked', eventProperties);
     });
   </script>
 
   <p>This is one my all-time favourite songs ever written by Jairo. The song is about the absurdity of our current society. In this hit, Muchachito starts off saying how those who misbehave always receive the best treatment as opposed to honest individuals who often are given a hard time if they make the minor of mistakes. It is also a song that describes the cinicism of our times. Especially when it says "<em>no te encariñes, vuélvete práctico</em>", meaning don't soften up, be pragmatic.</p>
   <br>
   <h3 id="ojala"><a href="https://youtu.be/Xh3dVN9J_yI" target="_blank">Siempre Que Tú Quieras</a>.</h3>
-  <p>Razmatazz, Barcelona, 2011. This song could not miss from our recommended list. This is arguably an all-time favourite masterpiece by the <em>colomense</em> artist. The reason why I recommend this performance is rooted in the gradual development of the atmosphere around this performance. Jairo starts soft with a <em>soave</em> introduction to then break the theatre's walls under the rythm of his guitar. Siempre Que Tú Quieras is arguably the most replicated of his songs. One of the most known versions is the one from the group <em><a href="https://youtu.be/McGFAl9YVlg" target="_blank">No Me Pises Que Llevo Chanclas</a></em>. Jairo himself in a interview at Andreu Buenafuente's TV show <em>Late Motiv</em> stated that he came across some music bands in South America who claimed this song as their making. He also joked about him making fun of his same song during concerts. "<em>Sometimes I change the lyrics and say Ojalá no te hubiera conocido en Murcia instead"</em>.</p>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('ojala');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Siempre que tú quieras",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
+  <p>Razmatazz, Barcelona, 2011. This song could not miss from our recommended list. This is arguably an all-time favourite masterpiece by the <em>colomense</em> artist. The reason why I recommend this performance is rooted in the gradual development of the atmosphere around this performance. Jairo starts soft with a <em>soave</em> introduction to then break the theatre's walls under the rythm of his guitar. Siempre Que Tú Quieras is arguably the most replicated of his songs. One of the most known versions is the one from the group <em><a id="chanclas" href="https://youtu.be/McGFAl9YVlg" target="_blank">No Me Pises Que Llevo Chanclas</a></em>. Jairo himself in a interview at Andreu Buenafuente's TV show <em>Late Motiv</em> stated that he came across some music bands in South America who claimed this song as their making. He also joked about him making fun of his same song during concerts. "<em>Sometimes I change the lyrics and say Ojalá no te hubiera conocido en Murcia instead"</em>.</p>
+                <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('chanclas');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Siempre que tú quieras",
+      video_author: "No Me Pises Que Llevo Chanclas",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
   <br>
   <h3 id="camino"><a href="https://youtu.be/HNdw1-1xNBk" target="_blank">Vino y se Fue - Vilafranca Concert</a>.</h3>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('camino');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Vino y se fue",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
   <p>In this videoclip Jairo is in his <em>One Man Band</em> version that made his famous. As a matter of fact, Muchachito's formation as an artist happened for the most part as a street performer. This gave him the acute capability of merging himself with his audience. As he stated in previous interviews, performing in the street gave him the chance to see people reacting to his music right away. He often declared of having played in the streets of Paris because artists are better treated there in terms of permits to play and such. While playing there, he learned a big deal from other performers (from Jamaica, among others) who gave him some precious tips on how to make the public dance. In this occasion, he is with his lifelong friends and co-performer Santos de Veracruz, the painter who has been collaborating with Jairo since high school. We recommend that you watch the entire series of these videos shot in Vilafranca. There are 6 in total. Here they were in the casino of Vilafranca, in 2011</p>
   <br>
   <h3 id="confinado"><a href="https://youtu.be/wWbghrNXtR0" target="_blank">Muchachito Confinado - An Online Concert</a></h3>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('confinado');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Muchachito Confinado",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
   <p>Muchachito's love for his audience, the cravings for being surrounded by <em>buena gente</em> shines through. During lockdown, after a little while far from the stage, he decides to host a concert in the balcony of his brother's flat. Accompanied by his lifelong friend Santos de Veracruz via phone, Lagata Cristi from <strong>El Orfanato Eléctrico</strong> (house of production founded by himself) they bring Jairo into his fans' houses through means of an exciting YouTube live concert. In this case, there is not just a single song I recommend. I advise to listen to the entire trilogy of clips: Muchachito Confinado 3, 4, and 6 (do not worry about the numbers, the other videos have been removed by Muchachito's collaborators due to technical issues). Some of the songs he plays in this instance are <em>Siempre Que Tú Quieras</em>,<em>La Viajera</em>, and <em>El Compadre</em>.</p>
 <br>
 <h2 id="curiosities">Curiosities</h2>
 <p>Muchachito - Jairo Perera - was born in Santa Coloma de Gramenet. As he declared multiple times on TV he wanted to become guitarist and singer since he was 6. When he was 13 he created his first mini band. But it wouldn't be until 2000 when he would make his first album with his band <em>Trimelón de Naranjus</em> - band founded in 1993. 
 <br>
 <br>
-Not many people know that one his most known songs <em>Siempre Que Tú Quieras</em> was actually born in those early years. You can listen to its first version <a href="https://youtu.be/9sEwv_51fOk" target="_blank">here</a>. What would then become his longtime success was first named <em>Sueños</em> and had a more Swing essence compared to its late transformation into a mix of Rumba and Folk <em>a lo desconocido</em>. No wonder that Jairo often declared to be oftentimes 'slave' of this song, in that he has been singing it for 30 years. As Muchachito admits, though, this song cannot be removed from his repertory and, as a matter of fact, it is used to close his live performances under the screams of his affectionated public.
+Not many people know that one his most known songs <em>Siempre Que Tú Quieras</em> was actually born in those early years. You can listen to its first version <a id="naranjus" href="https://youtu.be/9sEwv_51fOk" target="_blank">here</a>. What would then become his longtime success was first named <em>Sueños</em> and had a more Swing essence compared to its late transformation into a mix of Rumba and Folk <em>a lo desconocido</em>. No wonder that Jairo often declared to be oftentimes 'slave' of this song, in that he has been singing it for 30 years. As Muchachito admits, though, this song cannot be removed from his repertory and, as a matter of fact, it is used to close his live performances under the screams of his affectionated public.
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('naranjus');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Sueños",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
+  <br>
+<br>
+Some of his most loved songs are inspired by less known authors or other artists. For instance, another work of art is <em>Si Tú, Si Yo, Si No</em>. This song was first written and published by one of his points of reference Kiko Veneno. If you want to compare the two versions, here are two links to listen to the <a id="venenoso" href="https://www.youtube.com/watch?v=y7wfL0UWvEY" target="_blank">original version</a> by Veneno and Jairo's <a id="jairoversiona" href="https://www.youtube.com/watch?v=RaxCBlINJiU" target="_blank">later reinterpretation</a>.
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('venenoso');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Si tú, si yo, si no_og",
+      video_author: "Kiko Veneno",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+    </script>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('jairoversiona');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Si tú, si yo_jairo",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
 <br>
 <br>
-Some of his most loved songs are inspired by less known authors or other artists. For instance, another work of art is <em>Si Tú, Si Yo, Si No</em>. This song was first written and published by one of his points of reference Kiko Veneno. If you want to compare the two versions, here are two links to listen to the <a href="https://www.youtube.com/watch?v=y7wfL0UWvEY" target="_blank">original version</a> by Veneno and Jairo's <a href="https://www.youtube.com/watch?v=RaxCBlINJiU" target="_blank">later reinterpretation</a>.
-<br>
-<br>
-Another reinterpretation is inspired by one of Josele Sanguesa's creations <em>Soy Luz</em>. Soy Luz is featured in his disc <em>Visto lo Visto</em>. Among some of Sanguesa's most appreciated works, I would love to signal <em>Playa</em>. Guess what? Our beloved Jairo knows when a song is great. He just knows. Which is how Playa entered his repertory as well. Both versions are absolutely beautiful. Take a look at the original version <a href="https://youtu.be/e0a_0sHpsFI" target="_blank">here</a>. Jairo's version can be found <a href="https://youtu.be/4bMrTSGfwU4" target="_blank">here instead</a> (min 2.22).
+Another reinterpretation is inspired by one of Josele Sanguesa's creations <em>Soy Luz</em>. Soy Luz is featured in his disc <em>Visto lo Visto</em>. Among some of Sanguesa's most appreciated works, I would love to signal <em>Playa</em>. Guess what? Our beloved Jairo knows when a song is great. He just knows. Which is how Playa entered his repertory as well. Both versions are absolutely beautiful. Take a look at the original version <a id="sanguesa" href="https://youtu.be/e0a_0sHpsFI" target="_blank">here</a>. Jairo's version can be found <a id="playaj" href="https://youtu.be/4bMrTSGfwU4" target="_blank">here instead</a> (min 2.22).
+    <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('sanguesa');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "La Playa_og",
+      video_author: "Josele Sanguesa",
+      href_is_video: true 
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('playaj');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Playa_Jairo_Villafranca",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
   <br>
   <br>
-  One more song that probably not so many people konw being a version is <em>La Quiero a Morir</em>. Jairo's French followers can surely make the instant connection with Francis Cabrel's success<em>Je l'aime à mourir</em>. As done before, here are two links to help you appreciate both the <a href="https://www.youtube.com/watch?v=hrahPhIu3Oc" target="_blank">"original song</a> and <a href="https://www.youtube.com/watch?v=eEeKx1T8ndQ" target="_blank">Jairo's reinterpretation</a>.
+  One more song that probably not so many people konw being a version is <em>La Quiero a Morir</em>. Jairo's French followers can surely make the instant connection with Francis Cabrel's success<em>Je l'aime à mourir</em>. As done before, here are two links to help you appreciate both the <a id="iffrance"  href="https://www.youtube.com/watch?v=hrahPhIu3Oc" target="_blank">original song</a> and <a id="iffrancebyjairo" href="https://www.youtube.com/watch?v=eEeKx1T8ndQ" target="_blank">Jairo's reinterpretation</a>.
+   <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('iffrance');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "Je l'aime à mourir",
+      video_author: "Francis Cabrel",
+      href_is_video: true
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script> 
+      <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('iffrancebyjairo');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('href_clicked', {debug: true})
+
+    var eventProperties = {
+      href_name: "La Quiero a Morir",
+      video_author: "Muchachito Bombo Infierno",
+      href_is_video: true // Use boolean instead of string
+    }
+          amplitude.track('href_clicked', eventProperties);
+    });
+  </script>
   </p>
 </body>
 <footer>
@@ -178,10 +536,78 @@ Another reinterpretation is inspired by one of Josele Sanguesa's creations <em>S
     </tr>
     <tr>
     <tbody>
-      <td><a href="https://www.facebook.com/Muchachito-Bombo-Infierno-36333756791" target="_blank">Official Page</a></td>
-        <td><a href="https://www.instagram.com/muchachito_bombo/" target="_blank">IG Profile</a></td>
-        <td><a href="https://muchachitobomboinfierno.bigcartel.com/" target="_blank">Tienda Oficial</a></td>
-        <td><a href="https://www.instagram.com/elorfanatoelectrico/" target="_blank">IG Profile</a></td> 
+      <td><a id="jairooffpage" href="https://www.facebook.com/Muchachito-Bombo-Infierno-36333756791" target="_blank">Official Page</a></td>
+                <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('jairooffpage');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('social_opened', {debug: true})
+
+    var eventProperties = {
+      social_type: "Facebook",
+      social_page_name: "Official FB Page",
+      social_owner: "Muchachito Bombo Infierno"
+    }
+          amplitude.track('social_opened', eventProperties);
+    });
+  </script>
+        <td><a id="jairoig" href="https://www.instagram.com/muchachito_bombo/" target="_blank">IG Profile</a></td>
+                        <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('jairoig');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('social_opened', {debug: true})
+
+    var eventProperties = {
+      social_type: "Instagram",
+      social_page_name: "Official Instagram Page",
+      social_owner: "Muchachito Bombo Infierno"
+    }
+          amplitude.track('social_opened', eventProperties);
+    });
+  </script>
+        <td><a id="tienda" href="https://muchachitobomboinfierno.bigcartel.com/" target="_blank">Tienda Oficial</a></td>
+                        <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('tienda');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('social_opened', {debug: true})
+
+    var eventProperties = {
+      social_type: "E-commerce",
+      social_page_name: "Big Cartel Tienda",
+      social_owner: "Muchachito Bombo Infierno"
+    }
+          amplitude.track('social_opened', eventProperties);
+    });
+  </script>
+        <td><a id="orfanatoig" href="https://www.instagram.com/elorfanatoelectrico/" target="_blank">IG Profile</a></td> 
+                        <script type="text/javascript">
+    // Get a reference to the button element
+ var linkElement = document.getElementById('orfanatoig');
+
+   // Add a click event listener to the link
+  linkElement.addEventListener('click', function(event) {
+    // Track the link click event with Amplitude and pass additional properties
+    amplitude.getInstance().logEvent('social_opened', {debug: true})
+
+    var eventProperties = {
+      social_type: "Instagram",
+      social_page_name: "Official Orfanato IG Page",
+      social_owner: "Orfanato"
+    }
+          amplitude.track('social_opened', eventProperties);
+    });
+  </script>
       </tbody>
         </tr>
         </table>
